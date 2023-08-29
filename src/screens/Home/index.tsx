@@ -22,16 +22,17 @@ export function Home() {
 
         setParticipantName('')
 
-        console.log(participants)
 
         console.log('Você clicou no botão de Adicionar!')
     }
 
     function handleParticipantRemove(name: string) {
+        
+
         Alert.alert("Remover", `Remover o participante ${name}?`, [
             {
                 text: "Sim",
-                onPress: () => Alert.alert("Deletado")
+                onPress: () => setParticipants(prevState => prevState.filter(participant => participant !== name) )
             },
             {
                 text: "Não",
